@@ -127,6 +127,10 @@ extern "C" {
  * Additional extensions included: _nomatch_^
  * Extensions removed: _nomatch_^
  */
+
+// Manually undef GL_VERSION_1_1
+#undef GL_VERSION_1_1
+
 #ifndef GL_VERSION_1_0
 typedef void GLvoid;
 typedef unsigned int GLenum;
