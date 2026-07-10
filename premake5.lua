@@ -1,7 +1,8 @@
 project "imgui"
     kind "StaticLib"
     language "C++"
-    staticruntime "off"
+    cppdialect "C++17"
+    staticruntime "on"
     warnings "off"
 
     targetdir ("bin/" .. outputDir .. "/%{prj.name}")
@@ -24,21 +25,16 @@ project "imgui"
 
     filter "system:windows"
         systemversion "latest"
-        cppdialect "C++17"
-        staticruntime "on"
 
     filter "configurations:Debug"
         runtime "Debug"
-        buildoptions "/MDd"
         symbols "on"
 
     filter "configurations:Release"
         runtime "Release"
-        buildoptions "/MD"
         optimize "speed"
 
     filter "configurations:Dist"
         runtime "Release"
-        buildoptions "/MD"
         symbols "off"
         optimize "speed"
